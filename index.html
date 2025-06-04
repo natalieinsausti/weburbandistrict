@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Urban District</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff0f5;
+  color: #4a0033;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+header {
+  background-color: #ff69b4;
+  background-image: url('logo-header.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff0f5;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0;
+}
+header p {
+  margin: 0.3rem 0 0 0;
+  font-weight: 600;
+  font-size: 1rem;
+  font-style: italic;
+  color: #ffe6f0;
+}
+.container {
+  margin-top: 110px;
+  max-width: 800px;
+  width: 90%;
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+.image-section {
+  margin-bottom: 2rem;
+}
+.image-section img {
+  width: 100%;
+  height: auto;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+}
+h1 {
+  color: #fff0f5;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.highlight {
+  color: #ff1493;
+  font-weight: bold;
+}
+button.btn-explore {
+  background-color: #ff1493;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: #fff0f5;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1.5rem 0;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+}
+.catalog {
+  display: none;
+  margin-bottom: 2rem;
+  border: 2px solid #ff1493;
+  padding: 1rem;
+  min-height: 150px;
+  border-radius: 8px;
+  color: #4a0033;
+  font-style: italic;
+  text-align: center;
+}
+/* Sección Reseñas */
+#reviews-section {
+  margin-top: 2rem;
+}
+#reviews-section h2,
+#contact-section h2 {
+  color: #ff1493;
+  margin-bottom: 1rem;
+}
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.review-card {
+  background-color: #ffe4f1;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #4a0033;
+}
+#add-review {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#add-review textarea {
+  resize: vertical;
+  min-height: 60px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ff1493;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4a0033;
+}
+#add-review button {
+  align-self: flex-end;
+  background-color: #ff1493;
+  color: #fff0f5;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#add-review button:hover {
+  background-color: #e01282;
+}
+/* Sección Contacto */
+#contact-section {
+  margin-top: 2rem;
+  color: #4a0033;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.contact-item span {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+/* Banner footer */
+footer {
+  background-color: #ff69b4;
+  color: #fff0f5;
+  text-align: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: auto;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Urban District</h1>
+  <p>Pisa fuerte, marca tendencia</p>
+</header>
+<div class="container">
+  <div class="image-section">
+    <img src="/mnt/data/Captura de pantalla 2025-05-16 121925.png" alt="Urban District diseño" />
+  </div>
+  <main>
+    <p>
+      ¡Hola! Bienvenidos y bienvenidas a <span class="highlight">Urban District</span>. Nos
+      especializamos en ofrecer modelos únicos, ediciones limitadas y los lanzamientos más exclusivos del mundo sneaker.
+    </p>
+    <p>
+      Si buscas destacar y diferenciarte del resto <span>estás en el sitio correcto</span>.
+    </p>
+    <p>
+      Explora nuestra colección cuidadosamente elegida y <span class="highlight" style="text-transform: uppercase;">lleva tu outfit al siguiente nivel</span>.
+    </p>
+    <p>
+      Contamos con <span class="highlight">8 MODELOS</span> de cada marca, disponibles en <span class="highlight">11 TALLAS</span>.
+    </p>
+    <button class="btn-explore" id="toggleCatalog">Explorar catálogo</button>
+    <div class="catalog" id="catalog">
+      <!-- Catálogo vacío -->
+    </div>
+
+    <!-- Sección Reseñas -->
+    <section id="reviews-section">
+      <h2>RESEÑAS</h2>
+      <div class="reviews-list" id="reviews-list">
+        <div class="review-card">"Muy cómodas y con estilo inconfundible."</div>
+        <div class="review-card">"Excelente atención y variedad de marcas top. ¡Muy recomendable!"</div>
+        <div class="review-card">"La calidad es insuperable y los lanzamientos exclusivos me fascinan."</div>
+        <div class="review-card">"Perfecto para los amantes de las sneakers y el estilo urbano."</div>
+      </div>
+      <div id="add-review">
+        <textarea id="reviewInput" placeholder="Añade tu reseña aquí..."></textarea>
+        <button id="submitReview">Enviar reseña</button>
+      </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact-section">
+      <h2>Información de CONTACTO</h2>
+      <div class="contact-item"><span>📍</span>C Rambla de la Mancha, 25<br>Almansa, Albacete</div>
+      <div class="contact-item"><span>✉️</span>urban.district@sneaker.com</div>
+      <div class="contact-item"><span>📞</span>+34 661 375 627</div>
+    </section>
+  </main>
+</div>
+<footer>
+  Natalie Insausti Oliva - 2025
+</footer>
+<script>
+// Mostrar / ocultar catálogo al pulsar el botón
+const btnToggle = document.getElementById('toggleCatalog');
+const catalog = document.getElementById('catalog');
+btnToggle.addEventListener('click', () => {
+  if (catalog.style.display === 'grid') {
+    catalog.style.display = 'none';
+    btnToggle.textContent = 'Explorar catálogo';
+  } else {
+    catalog.style.display = 'grid';
+    btnToggle.textContent = 'Cerrar catálogo';
+  }
+});
+
+// Añadir reseña
+const submitReviewBtn = document.getElementById('submitReview');
+const reviewInput = document.getElementById('reviewInput');
+const reviewsList = document.getElementById('reviews-list');
+submitReviewBtn.addEventListener('click', () => {
+  const text = reviewInput.value.trim();
+  if(text.length > 0) {
+    const newReview = document.createElement('div');
+    newReview.className = 'review-card';
+    newReview.textContent = `"${text}"`;
+    reviewsList.appendChild(newReview);
+    reviewInput.value = '';
+  } else {
+    alert('Por favor, escribe una reseña antes de enviarla.');
+  }
+});
+</script>
+</body>
+</html>
