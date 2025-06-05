@@ -108,7 +108,71 @@
       margin-bottom: 0.5rem;
       border-radius: 5px;
     }
-  </style>
+    .reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+  .review-card {
+    background-color: #ffe4f1;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    font-style: italic;
+    font-size: 1rem;
+    color: #4a0033;
+    max-width: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s ease forwards;
+  }
+  .review-card:nth-child(2) { animation-delay: 0.2s; }
+  .review-card:nth-child(3) { animation-delay: 0.4s; }
+  .review-card:nth-child(4) { animation-delay: 0.6s; }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #add-review {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  #add-review textarea {
+    resize: vertical;
+    min-height: 60px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ff1493;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #4a0033;
+    width: 100%;
+    max-width: 500px;
+  }
+  #add-review button {
+    background-color: #ff1493;
+    color: #fff0f5;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #add-review button:hover {
+    background-color: #e01282;
+  }
+</style>
 </head>
 <body>
   <header>
