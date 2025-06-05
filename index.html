@@ -211,6 +211,18 @@
   margin-top: 2rem;
   text-align: left;
 }
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff1493;
+  margin: 2rem 0 1rem;
+  text-align: left;
+}
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
 </style>
 </head>
 <body>
@@ -233,8 +245,21 @@
       <p>Contamos con <span class="highlight">8 MODELOS</span> de cada marca, disponibles en <span class="highlight">11 TALLAS</span>.</p>
       <button class="btn-explore" id="toggleCatalog">Explorar catálogo</button>
       <div class="catalog" id="catalog" style="display: none;">
-  <!-- NIKE -->
+  <div class="brand-section">
+    <h3 class="brand-title">Nike</h3>
+    <div class="brand-grid">
+      <div class="product-card"><img src="nike-air-force-1.jpg" alt="Nike Air Force 1"><h3>Air Force 1</h3><p>Marca: Nike</p><p>Precio: 119,99 €</p></div>
+      <div class="product-card"><img src="nike-air-max-1.jpg" alt="Nike Air Max 1"><h3>Air Max 1</h3><p>Marca: Nike</p><p>Precio: 139,99 €</p></div>
+      <div class="product-card"><img src="nike-vomero-5.jpg" alt="Nike Vomero 5"><h3>Vomero 5</h3><p>Marca: Nike</p><p>Precio: 159,99 €</p></div>
+      <div class="product-card"><img src="nike-dunk-low.jpg" alt="Nike Dunk Low"><h3>Dunk Low</h3><p>Marca: Nike</p><p>Precio: 119,99 €</p></div>
+      <div class="product-card"><img src="nike-air-force-shadow.jpg" alt="Nike Air Force Shadow"><h3>Air Force Shadow</h3><p>Marca: Nike</p><p>Precio: 125,00 €</p></div>
+      <div class="product-card"><img src="nike-juniper-trail-2.jpg" alt="Nike Juniper Trail 2"><h3>Juniper Trail 2</h3><p>Marca: Nike</p><p>Precio: 99,99 €</p></div>
+      <div class="product-card"><img src="nike-initiator.jpg" alt="Nike Initiator"><h3>Initiator</h3><p>Marca: Nike</p><p>Precio: 64,99 €</p></div>
+      <div class="product-card"><img src="nike-pegasus.jpg" alt="Nike Pegasus"><h3>Pegasus</h3><p>Marca: Nike</p><p>Precio: 129,99 €</p></div>
+    </div>
   </div>
+  <!-- Repetir para otras marcas si deseas -->
+</div>
 </div>
 <h3 class="brand-title">Marca</h3>
 <div class="catalog" style="display: none;"><img src="nike-air-max-1.jpg" alt="Nike Air Max 1"><h3>Air Max 1</h3><p>Marca: Nike</p><p>Precio: 139,99 €</p></div>
@@ -500,4 +525,3 @@
   </script>
 </body>
 </html>
-
