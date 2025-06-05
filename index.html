@@ -246,7 +246,26 @@
 </div>
         <!-- Aquí se incluirán las marcas y productos, organizados por bloques -->
       </div>
-    </main>
+    <section id="reviews-section">
+  <h2>RESEÑAS</h2>
+  <div class="reviews-list" id="reviews-list">
+    <div class="review-card">"Muy cómodas y con estilo inconfundible."</div>
+    <div class="review-card">"Excelente atención y variedad de marcas top. ¡Muy recomendable!"</div>
+    <div class="review-card">"La calidad es insuperable y los lanzamientos exclusivos me fascinan."</div>
+    <div class="review-card">"Perfecto para los amantes de las sneakers y el estilo urbano."</div>
+  </div>
+  <div id="add-review">
+    <textarea id="reviewInput" placeholder="Añade tu reseña aquí..."></textarea>
+    <button id="submitReview">Enviar reseña</button>
+  </div>
+</section>
+<section id="contact-section">
+  <h2>Información de CONTACTO</h2>
+  <div class="contact-item"><span>📍</span>C Rambla de la Mancha, 25<br>Almansa, Albacete</div>
+  <div class="contact-item"><span>✉️</span>urban.district@sneaker.com</div>
+  <div class="contact-item"><span>📞</span>+34 661 375 627</div>
+</section>
+</main>
   </div>
   <script>
     const btnToggle = document.getElementById('toggleCatalog');
@@ -260,6 +279,21 @@
         btnToggle.textContent = 'Cerrar catálogo';
       }
     });
-  </script>
+  const submitReviewBtn = document.getElementById('submitReview');
+const reviewInput = document.getElementById('reviewInput');
+const reviewsList = document.getElementById('reviews-list');
+submitReviewBtn.addEventListener('click', () => {
+  const text = reviewInput.value.trim();
+  if(text.length > 0) {
+    const newReview = document.createElement('div');
+    newReview.className = 'review-card';
+    newReview.textContent = `"${text}"`;
+    reviewsList.appendChild(newReview);
+    reviewInput.value = '';
+  } else {
+    alert('Por favor, escribe una reseña antes de enviarla.');
+  }
+});
+</script>
 </body>
 </html>
