@@ -2,165 +2,354 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Catálogo Completo de Marcas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban District</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f8f8f8;
-      color: #333;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #4a0033;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
     header {
+      background-color: #ff69b4;
+      color: #fff0f5;
+      padding: 4rem 2rem;
       text-align: center;
-      margin-bottom: 30px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
-    header img {
-      width: 150px;
-      margin-bottom: 10px;
-    }
-    .description {
-      max-width: 600px;
-      margin: 0 auto 40px auto;
-      font-size: 18px;
-      line-height: 1.4;
-    }
-    #catalogo {
-      display: none;
-      max-width: 800px;
-      margin: 0 auto 50px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .marca {
-      display: flex;
-      align-items: center;
-      margin-bottom: 25px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 15px;
-    }
-    .marca img {
-      width: 100px;
-      margin-right: 20px;
-    }
-    .marca h3 {
-      margin: 0 0 8px 0;
-      font-size: 22px;
-    }
-    .marca p {
+    header h1 {
       margin: 0;
-      color: #555;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
     }
-    button {
-      display: block;
-      margin: 0 auto 40px auto;
-      padding: 12px 25px;
-      font-size: 18px;
-      background-color: #0077cc;
-      color: white;
+    header p {
+      margin: 0.3rem 0 0 0;
+      font-weight: 600;
+      font-size: 1rem;
+      font-style: italic;
+      color: #ffe6f0;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    .container {
+      margin-top: 160px;
+      max-width: 800px;
+      width: 90%;
+      padding: 0 1rem;
+      flex-grow: 1;
+    }
+    .image-section {
+      margin-bottom: 2rem;
+    }
+    .image-section img {
+      width: 100%;
+      height: auto;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: #fff0f5;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .highlight {
+      color: #ff1493;
+      font-weight: bold;
+    }
+    button.btn-explore {
+      background-color: #ff1493;
       border: none;
-      border-radius: 6px;
+      padding: 0.8rem 1.5rem;
+      color: #fff0f5;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 1.5rem 0;
+      display: block;
+      width: 100%;
+      max-width: 250px;
+    }
+    .catalog {
+      display: none;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #ffe4f1;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      color: #4a0033;
+      font-style: normal;
+    }
+    #reviews-section {
+      margin-top: 2rem;
+    }
+    #reviews-section h2,
+    #contact-section h2 {
+      color: #ff1493;
+      margin-bottom: 1rem;
+    }
+    .reviews-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .review-card {
+      background-color: #ffe4f1;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #4a0033;
+    }
+    #add-review {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    #add-review textarea {
+      resize: vertical;
+      min-height: 60px;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ff1493;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #4a0033;
+    }
+    #add-review button {
+      align-self: flex-end;
+      background-color: #ff1493;
+      color: #fff0f5;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #005fa3;
+    #add-review button:hover {
+      background-color: #e01282;
     }
-    .reseñas, .ubicacion {
-      max-width: 600px;
-      margin: 0 auto 40px auto;
-      background: white;
-      padding: 20px;
+    #contact-section {
+      margin-top: 2rem;
+      color: #4a0033;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-item span {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+    footer {
+      background-color: #ff69b4;
+      color: #fff0f5;
+      text-align: center;
+      padding: 1rem 2rem;
+      width: 100%;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto;
+    }
+    .product-card {
+      border: 2px solid #ff69b4;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      background-color: #fff;
+      color: #4a0033;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .reseñas h2, .ubicacion h2 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 24px;
-      color: #0077cc;
+    .product-card img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
     }
-    .reseñas p, .ubicacion p {
-      font-size: 16px;
-      line-height: 1.5;
+    .catalog {
+      display: none;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #ffe4f1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      color: #4a0033;
+      font-style: normal;
+    }
+    .brand-title {
+      grid-column: 1 / -1;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ff1493;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff1493;
+      margin: 2rem 0 1rem;
+      text-align: left;
+    }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Logo Principal" />
-  <h1>Bienvenido a nuestra tienda de zapatillas</h1>
-</header>
-
-<section class="description">
-  <p>
-    En nuestra tienda encontrarás las mejores marcas de zapatillas deportivas para todos los gustos y estilos. Ofrecemos productos originales y de alta calidad con envío rápido y garantía.
-  </p>
-</section>
-
-<button id="mostrarCatalogo">Mostrar catálogo completo</button>
-
-<section id="catalogo">
-  <div class="marca">
-    <img src="https://1000marcas.net/wp-content/uploads/2020/02/Adidas-Logo.png" alt="Adidas Logo" />
-    <div>
-      <h3>Adidas</h3>
-      <p>Zapatillas deportivas con tecnología avanzada y diseño moderno.</p>
+  <header>
+    <h1>Urban District</h1>
+    <p>Pisa fuerte, marca tendencia</p>
+  </header>
+  <div class="container">
+    <!-- Logo visual en grande -->
+    <div style="text-align:center; margin-bottom: 2rem;">
+      <img src="logo-header.png" alt="Urban District Logo" style="max-width: 300px; width: 100%; height: auto;" />
     </div>
-  </div>
-  <div class="marca">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/New_Balance_logo.svg" alt="New Balance Logo" />
-    <div>
-      <h3>New Balance</h3>
-      <p>Comodidad y estilo para correr y uso diario.</p>
+    <div class="image-section">
+      <img src="/mnt/data/Captura de pantalla 2025-05-16 121925.png" alt="Urban District diseño" />
     </div>
+    <main>
+      <p>¡Hola! Bienvenidos y bienvenidas a <span class="highlight">Urban District</span>. Nos especializamos en ofrecer modelos únicos, ediciones limitadas y los lanzamientos más exclusivos del mundo sneaker.</p>
+      <p>Si buscas destacar y diferenciarte del resto <span>estás en el sitio correcto</span>.</p>
+      <p>Explora nuestra colección cuidadosamente elegida y <span class="highlight" style="text-transform: uppercase;">lleva tu outfit al siguiente nivel</span>.</p>
+      <p>Contamos con <span class="highlight">8 MODELOS</span> de cada marca, disponibles en <span class="highlight">11 TALLAS</span>.</p>
+      <button class="btn-explore" id="toggleCatalog">Explorar catálogo</button>
+      <div class="catalog" id="catalog" style="display: none;">
+        <!-- ASICS -->
+        <div class="brand-section">
+          <h3 class="brand-title">Asics</h3>
+          <div class="brand-grid">
+            <div class="product-card"><img src="asics-gel-nyc.jpg" alt="Asics Gel-NYC" /><p>Gel-NYC</p></div>
+            <div class="product-card"><img src="asics-gel-kayano.jpg" alt="Asics Gel-Kayano" /><p>Gel-Kayano</p></div>
+            <div class="product-card"><img src="asics-gel-nimbus.jpg" alt="Asics Gel-Nimbus" /><p>Gel-Nimbus</p></div>
+            <div class="product-card"><img src="asics-gel-quantum.jpg" alt="Asics Gel-Quantum" /><p>Gel-Quantum</p></div>
+            <div class="product-card"><img src="asics-gel-lyte.jpg" alt="Asics Gel-Lyte" /><p>Gel-Lyte</p></div>
+            <div class="product-card"><img src="asics-gel-lyte-iii.jpg" alt="Asics Gel-Lyte III" /><p>Gel-Lyte III</p></div>
+            <div class="product-card"><img src="asics-gel-cumulus.jpg" alt="Asics Gel-Cumulus" /><p>Gel-Cumulus</p></div>
+            <div class="product-card"><img src="asics-gel-DS-trainer.jpg" alt="Asics Gel DS-Trainer" /><p>Gel DS-Trainer</p></div>
+          </div>
+        </div>
+        <!-- New Balance -->
+        <div class="brand-section">
+          <h3 class="brand-title">New Balance</h3>
+          <div class="brand-grid">
+            <div class="product-card"><img src="newbalance-574.jpg" alt="New Balance 574" /><p>574</p></div>
+            <div class="product-card"><img src="newbalance-990.jpg" alt="New Balance 990" /><p>990</p></div>
+            <div class="product-card"><img src="newbalance-1080.jpg" alt="New Balance 1080" /><p>1080</p></div>
+            <div class="product-card"><img src="newbalance-1080-v12.jpg" alt="New Balance 1080 v12" /><p>1080 v12</p></div>
+            <div class="product-card"><img src="newbalance-993.jpg" alt="New Balance 993" /><p>993</p></div>
+            <div class="product-card"><img src="newbalance-998.jpg" alt="New Balance 998" /><p>998</p></div>
+            <div class="product-card"><img src="newbalance-1500.jpg" alt="New Balance 1500" /><p>1500</p></div>
+            <div class="product-card"><img src="newbalance-327.jpg" alt="New Balance 327" /><p>327</p></div>
+          </div>
+        </div>
+        <!-- Nike -->
+        <div class="brand-section">
+          <h3 class="brand-title">Nike</h3>
+          <div class="brand-grid">
+            <div class="product-card"><img src="nike-air-force-1.jpg" alt="Nike Air Force 1" /><p>Air Force 1</p></div>
+            <div class="product-card"><img src="nike-air-max-90.jpg" alt="Nike Air Max 90" /><p>Air Max 90</p></div>
+            <div class="product-card"><img src="nike-air-jordan-1.jpg" alt="Nike Air Jordan 1" /><p>Air Jordan 1</p></div>
+            <div class="product-card"><img src="nike-dunk-low.jpg" alt="Nike Dunk Low" /><p>Dunk Low</p></div>
+            <div class="product-card"><img src="nike-react-infinity.jpg" alt="Nike React Infinity" /><p>React Infinity</p></div>
+            <div class="product-card"><img src="nike-air-vapormax.jpg" alt="Nike Air Vapormax" /><p>Air Vapormax</p></div>
+            <div class="product-card"><img src="nike-pegasus.jpg" alt="Nike Pegasus" /><p>Pegasus</p></div>
+            <div class="product-card"><img src="nike-zoom-freak.jpg" alt="Nike Zoom Freak" /><p>Zoom Freak</p></div>
+          </div>
+        </div>
+        <!-- Adidas -->
+        <div class="brand-section">
+          <h3 class="brand-title">Adidas</h3>
+          <div class="brand-grid">
+            <div class="product-card"><img src="adidas-ultraboost.jpg" alt="Adidas Ultraboost" /><p>Ultraboost</p></div>
+            <div class="product-card"><img src="adidas-nmd.jpg" alt="Adidas NMD" /><p>NMD</p></div>
+            <div class="product-card"><img src="adidas-superstar.jpg" alt="Adidas Superstar" /><p>Superstar</p></div>
+            <div class="product-card"><img src="adidas-yeezy.jpg" alt="Adidas Yeezy" /><p>Yeezy</p></div>
+            <div class="product-card"><img src="adidas-predator.jpg" alt="Adidas Predator" /><p>Predator</p></div>
+            <div class="product-card"><img src="adidas-stan-smith.jpg" alt="Adidas Stan Smith" /><p>Stan Smith</p></div>
+            <div class="product-card"><img src="adidas-continental.jpg" alt="Adidas Continental" /><p>Continental</p></div>
+            <div class="product-card"><img src="adidas-supernova.jpg" alt="Adidas Supernova" /><p>Supernova</p></div>
+          </div>
+        </div>
+      </div>
+      <section id="reviews-section">
+        <h2>Comentarios y reseñas</h2>
+        <div class="reviews-list" id="reviews-list">
+          <div class="review-card">¡Me encanta Urban District! La selección de zapatillas es increíble.</div>
+          <div class="review-card">Entrega rápida y servicio al cliente excelente.</div>
+          <div class="review-card">La calidad de los productos es insuperable.</div>
+        </div>
+        <div id="add-review">
+          <textarea id="review-input" placeholder="Escribe tu comentario aquí..."></textarea>
+          <button id="submit-review">Agregar comentario</button>
+        </div>
+      </section>
+      <section id="contact-section">
+        <h2>Contacto</h2>
+        <div class="contact-item"><span>📧</span> <a href="mailto:contacto@urbandistrict.com" style="color:#4a0033; text-decoration:none;">contacto@urbandistrict.com</a></div>
+        <div class="contact-item"><span>📞</span> <a href="tel:+1234567890" style="color:#4a0033; text-decoration:none;">+1 234 567 890</a></div>
+        <div class="contact-item"><span>🏠</span> Calle Falsa 123, Ciudad, País</div>
+      </section>
+    </main>
   </div>
-  <div class="marca">
-    <img src="https://1000marcas.net/wp-content/uploads/2020/04/Converse-Logo.png" alt="Converse Logo" />
-    <div>
-      <h3>Converse</h3>
-      <p>Clásicos atemporales con estilo urbano.</p>
-    </div>
-  </div>
-  <div class="marca">
-    <img src="https://1000marcas.net/wp-content/uploads/2019/12/Nike-Logo.png" alt="Nike Logo" />
-    <div>
-      <h3>Nike</h3>
-      <p>Innovación y rendimiento para atletas de todos los niveles.</p>
-    </div>
-  </div>
-</section>
+  <footer>
+    Urban District © 2025. Todos los derechos reservados.
+  </footer>
+  <script>
+    // Toggle catálogo
+    document.getElementById('toggleCatalog').addEventListener('click', function() {
+      const catalog = document.getElementById('catalog');
+      if (catalog.style.display === 'none' || catalog.style.display === '') {
+        catalog.style.display = 'grid';
+        this.textContent = 'Ocultar catálogo';
+      } else {
+        catalog.style.display = 'none';
+        this.textContent = 'Explorar catálogo';
+      }
+    });
 
-<section class="reseñas">
-  <h2>Reseñas de nuestros clientes</h2>
-  <p>⭐⭐⭐⭐⭐ "La mejor tienda de zapatillas que he visitado. Entrega rápida y excelente atención." - Laura</p>
-  <p>⭐⭐⭐⭐ "Gran variedad y buenos precios. Recomiendo especialmente Adidas y Nike." - Carlos</p>
-</section>
-
-<section class="ubicacion">
-  <h2>Ubicación</h2>
-  <p>Calle Falsa 123, Ciudad Deportiva, España.</p>
-  <p>Teléfono: +34 600 123 456</p>
-</section>
-
-<script>
-  const btn = document.getElementById('mostrarCatalogo');
-  const catalogo = document.getElementById('catalogo');
-  
-  btn.addEventListener('click', () => {
-    if (catalogo.style.display === 'block') {
-      catalogo.style.display = 'none';
-      btn.textContent = 'Mostrar catálogo completo';
-    } else {
-      catalogo.style.display = 'block';
-      btn.textContent = 'Ocultar catálogo';
-    }
-  });
-</script>
-
+    // Agregar comentarios dinámicos
+    document.getElementById('submit-review').addEventListener('click', () => {
+      const input = document.getElementById('review-input');
+      const text = input.value.trim();
+      if (text) {
+        const newReview = document.createElement('div');
+        newReview.className = 'review-card';
+        newReview.textContent = text;
+        document.getElementById('reviews-list').appendChild(newReview);
+        input.value = '';
+      }
+    });
+  </script>
 </body>
 </html>
-
