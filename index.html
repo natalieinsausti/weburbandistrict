@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Urban District</title>
   <style>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban District</title>
+  <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
@@ -344,37 +351,6 @@
   </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 class="brand-title">Marca</h3>
 <div class="catalog" style="display: none;">
     <img src="converse-run-star-hike.jpg" alt="Converse Run Star Hike">
@@ -441,4 +417,56 @@
 </body>
 </html>
 
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Urban District</h1>
+    <p>Pisa fuerte, marca tendencia</p>
+  </header>
+  <div class="container">
+    <!-- Logo visual en grande -->
+    <div style="text-align:center; margin-bottom: 2rem;">
+      <img src="logo-header.png" alt="Urban District Logo" style="max-width: 300px; width: 100%; height: auto;" />
+    </div>
+    <div class="image-section">
+      <img src="/mnt/data/Captura de pantalla 2025-05-16 121925.png" alt="Urban District diseño" />
+    </div>
+    <main>
+      <p>¡Hola! Bienvenidos y bienvenidas a <span class="highlight">Urban District</span>. Nos especializamos en ofrecer modelos únicos, ediciones limitadas y los lanzamientos más exclusivos del mundo sneaker.</p>
+      <p>Si buscas destacar y diferenciarte del resto <span>estás en el sitio correcto</span>.</p>
+      <p>Explora nuestra colección cuidadosamente elegida y <span class="highlight" style="text-transform: uppercase;">lleva tu outfit al siguiente nivel</span>.</p>
+      <p>Contamos con <span class="highlight">8 MODELOS</span> de cada marca, disponibles en <span class="highlight">11 TALLAS</span>.</p>
+      <button class="btn-explore" id="toggleCatalog">Explorar catálogo</button>
+      <div class="catalog" id="catalog" style="display: none;">
+        <!-- Aquí todo el contenido del catálogo con las marcas y productos -->
+        <!-- Por ejemplo: -->
+        <div class="brand-section">
+          <h3 class="brand-title">Asics</h3>
+          <div class="brand-grid">
+            <div class="product-card"><img src="asics-gel-nyc.jpg" alt="Asics Gel NYC"><h3>Gel NYC</h3><p>Marca: Asics</p><p>Precio: 179,95 €</p></div>
+            <!-- Resto de productos Asics -->
+          </div>
+        </div>
+        <!-- Resto de marcas -->
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleCatalog');
+    const catalog = document.getElementById('catalog');
+
+    toggleBtn.addEventListener('click', () => {
+      if (catalog.style.display === 'none' || catalog.style.display === '') {
+        catalog.style.display = 'grid';  // Se muestra el catálogo como grid para mantener el diseño CSS
+        toggleBtn.textContent = 'Cerrar catálogo';
+      } else {
+        catalog.style.display = 'none';
+        toggleBtn.textContent = 'Explorar catálogo';
+      }
+    });
+  </script>
+</body>
+</html>
 
