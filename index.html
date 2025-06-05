@@ -421,13 +421,15 @@
     const btnToggle = document.getElementById('toggleCatalog');
     const catalog = document.getElementById('catalog');
     btnToggle.addEventListener('click', () => {
-      if (catalog.style.display === 'grid') {
-        catalog.style.display = 'none';
-        btnToggle.textContent = 'Explorar catálogo';
-      } else {
-        catalog.style.display = 'grid';
-        btnToggle.textContent = 'Cerrar catálogo';
-      }
+      if (catalog.classList.contains('active')) {
+  catalog.classList.remove('active');
+  catalog.style.display = 'none';
+  btnToggle.textContent = 'Explorar catálogo';
+} else {
+  catalog.classList.add('active');
+  catalog.style.display = 'grid';
+  btnToggle.textContent = 'Cerrar catálogo';
+}
     });
 
     const submitReviewBtn = document.getElementById('submitReview');
@@ -448,4 +450,5 @@
   </script>
 </body>
 </html>
+
 
