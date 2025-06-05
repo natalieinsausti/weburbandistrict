@@ -16,16 +16,16 @@
       min-height: 100vh;
     }
     header {
-  background-color: #ff69b4;
-  color: #fff0f5;
-  padding: 4rem 2rem;
-  text-align: center;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
+      background-color: #ff69b4;
+      color: #fff0f5;
+      padding: 4rem 2rem;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
     header h1 {
       margin: 0;
       background-color: rgba(0, 0, 0, 0.4);
@@ -51,27 +51,9 @@
       padding: 0 1rem;
       flex-grow: 1;
     }
-    .image-section {
-      margin-bottom: 2rem;
-    }
     .image-section img {
       width: 100%;
       height: auto;
-    }
-    main {
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: #fff0f5;
-    }
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-    .highlight {
-      color: #ff1493;
-      font-weight: bold;
     }
     button.btn-explore {
       background-color: #ff1493;
@@ -88,142 +70,45 @@
       max-width: 250px;
     }
     .catalog {
-  display: none;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #ffe4f1;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  color: #4a0033;
-  font-style: normal;
-}
-    #reviews-section {
-      margin-top: 2rem;
+      display: none;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
-    #reviews-section h2,
-    #contact-section h2 {
+    .brand-section {
+      width: 100%;
+    }
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: bold;
       color: #ff1493;
       margin-bottom: 1rem;
     }
-    .reviews-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .brand-grid {
+      display: flex;
+      overflow-x: auto;
       gap: 1rem;
-      margin-bottom: 1rem;
+      padding-bottom: 1rem;
     }
-    .review-card {
-      background-color: #ffe4f1;
-      padding: 1rem;
+    .product-card {
+      min-width: 200px;
+      border: 2px solid #ff69b4;
       border-radius: 8px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-      font-style: italic;
-      font-size: 0.95rem;
+      padding: 1rem;
+      background-color: #fff;
       color: #4a0033;
-    }
-    #add-review {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    #add-review textarea {
-      resize: vertical;
-      min-height: 60px;
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ff1493;
-      font-family: inherit;
-      font-size: 1rem;
-      color: #4a0033;
-    }
-    #add-review button {
-      align-self: flex-end;
-      background-color: #ff1493;
-      color: #fff0f5;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #add-review button:hover {
-      background-color: #e01282;
-    }
-    #contact-section {
-      margin-top: 2rem;
-      color: #4a0033;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .contact-item span {
-      font-size: 1.3rem;
-      line-height: 1;
-    }
-    footer {
-      background-color: #ff69b4;
-      color: #fff0f5;
       text-align: center;
-      padding: 1rem 2rem;
-      width: 100%;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-top: auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
     }
-  .product-card {
-  border: 2px solid #ff69b4;
-  border-radius: 8px;
-  padding: 1rem;
-  background-color: #fff;
-  color: #4a0033;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.product-card img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-}
-.catalog {
-  display: none;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #ffe4f1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  color: #4a0033;
-  font-style: normal;
-}
-.brand-title {
-  grid-column: 1 / -1;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ff1493;
-  margin-top: 2rem;
-  text-align: left;
-}
-.brand-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff1493;
-  margin: 2rem 0 1rem;
-  text-align: left;
-}
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-</style>
+    .product-card img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -231,210 +116,148 @@
     <p>Pisa fuerte, marca tendencia</p>
   </header>
   <div class="container">
-  <!-- Logo visual en grande -->
-  <div style="text-align:center; margin-bottom: 2rem;">
-    <img src="logo-header.png" alt="Urban District Logo" style="max-width: 300px; width: 100%; height: auto;" />
-  </div>
-    <div class="image-section">
-      <img src="/mnt/data/Captura de pantalla 2025-05-16 121925.png" alt="Urban District diseño" />
+    <div style="text-align:center; margin-bottom: 2rem;">
+      <img src="logo-header.png" alt="Urban District Logo" style="max-width: 300px; width: 100%; height: auto;" />
     </div>
     <main>
       <p>¡Hola! Bienvenidos y bienvenidas a <span class="highlight">Urban District</span>. Nos especializamos en ofrecer modelos únicos, ediciones limitadas y los lanzamientos más exclusivos del mundo sneaker.</p>
-      <p>Si buscas destacar y diferenciarte del resto <span>estás en el sitio correcto</span>.</p>
       <p>Explora nuestra colección cuidadosamente elegida y <span class="highlight" style="text-transform: uppercase;">lleva tu outfit al siguiente nivel</span>.</p>
-      <p>Contamos con <span class="highlight">8 MODELOS</span> de cada marca, disponibles en <span class="highlight">11 TALLAS</span>.</p>
       <button class="btn-explore" id="toggleCatalog">Explorar catálogo</button>
-      <div class="catalog" id="catalog" style="display: none;">
-  <!-- ASICS -->
-  <div class="brand-section">
-    <h3 class="brand-title">Asics</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="asics-gel-nyc.jpg" alt="Asics Gel NYC"><h3>Gel NYC</h3><p>Marca: Asics</p><p>Precio: 179,95 €</p></div>
-      <div class="product-card"><img src="asics-gel-kayano.jpg" alt="Asics Gel Kayano"><h3>Gel Kayano</h3><p>Marca: Asics</p><p>Precio: 179,95 €</p></div>
-      <div class="product-card"><img src="asics-gel-nimbus-27.jpg" alt="Asics Gel Nimbus 27"><h3>Gel Nimbus 27</h3><p>Marca: Asics</p><p>Precio: 190,00 €</p></div>
-      <div class="product-card"><img src="asics-gel-cumulus.jpg" alt="Asics Gel Cumulus"><h3>Gel Cumulus</h3><p>Marca: Asics</p><p>Precio: 140,00 €</p></div>
-      <div class="product-card"><img src="asics-gel-dedicate-8-padel.jpg" alt="Asics Gel Dedicate 8 Padel"><h3>Gel Dedicate 8 Padel</h3><p>Marca: Asics</p><p>Precio: 75,00 €</p></div>
-      <div class="product-card"><img src="asics-noosa-tri-16.jpg" alt="Asics Noosa Tri 16"><h3>Noosa Tri 16</h3><p>Marca: Asics</p><p>Precio: 140,00 €</p></div>
-      <div class="product-card"><img src="asics-gel-resolution-x-padel.jpg" alt="Asics Gel Resolution X Padel"><h3>Gel Resolution X Padel</h3><p>Marca: Asics</p><p>Precio: 160,00 €</p></div>
-      <div class="product-card"><img src="asics-patriot-13-gs.jpg" alt="Asics Patriot 13 GS"><h3>Patriot 13 GS</h3><p>Marca: Asics</p><p>Precio: 50,00 €</p></div>
-    </div>
-  </div>
-  <!-- MIZUNO -->
-  <div class="brand-section">
-    <h3 class="brand-title">Mizuno</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="mizuno-wave-rider-28.jpg" alt="Mizuno Wave Rider 28"><h3>Wave Rider 28</h3><p>Marca: Mizuno</p><p>Precio: 160,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-sky-8.jpg" alt="Mizuno Wave Sky 8"><h3>Wave Sky 8</h3><p>Marca: Mizuno</p><p>Precio: 180,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-momentum-3.jpg" alt="Mizuno Wave Momentum 3"><h3>Wave Momentum 3</h3><p>Marca: Mizuno</p><p>Precio: 150,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-mirage-5.jpg" alt="Mizuno Wave Mirage 5"><h3>Wave Mirage 5</h3><p>Marca: Mizuno</p><p>Precio: 140,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-lightning-neo-2.jpg" alt="Mizuno Wave Lightning Neo 2"><h3>Wave Lightning Neo 2</h3><p>Marca: Mizuno</p><p>Precio: 170,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-inspire-21.jpg" alt="Mizuno Wave Inspire 21"><h3>Wave Inspire 21</h3><p>Marca: Mizuno</p><p>Precio: 155,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-exceed-tour-6-cc.jpg" alt="Mizuno Wave Exceed Tour 6 CC"><h3>Wave Exceed Tour 6 CC</h3><p>Marca: Mizuno</p><p>Precio: 160,00 €</p></div>
-      <div class="product-card"><img src="mizuno-wave-lightning-z8.jpg" alt="Mizuno Wave Lightning Z8"><h3>Wave Lightning Z8</h3><p>Marca: Mizuno</p><p>Precio: 130,00 €</p></div>
-    </div>
-  </div>
-  <!-- HOKA -->
-  <div class="brand-section">
-    <h3 class="brand-title">Hoka One One</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="hoka-clifton-9.jpg" alt="Hoka Clifton 9"><h3>Clifton 9</h3><p>Marca: Hoka</p><p>Precio: 150,00 €</p></div>
-      <div class="product-card"><img src="hoka-clifton-ls.jpg" alt="Hoka Clifton LS"><h3>Clifton LS</h3><p>Marca: Hoka</p><p>Precio: 155,00 €</p></div>
-      <div class="product-card"><img src="hoka-speedgoat-5.jpg" alt="Hoka Speedgoat 5"><h3>Speedgoat 5</h3><p>Marca: Hoka</p><p>Precio: 130,00 €</p></div>
-      <div class="product-card"><img src="hoka-bondi-8.jpg" alt="Hoka Bondi 8"><h3>Bondi 8</h3><p>Marca: Hoka</p><p>Precio: 160,00 €</p></div>
-      <div class="product-card"><img src="hoka-kaha-2-low-goretex.jpg" alt="Hoka Kaha 2 Low Gore-Tex"><h3>Kaha 2 Low Gore-Tex</h3><p>Marca: Hoka</p><p>Precio: 210,00 €</p></div>
-      <div class="product-card"><img src="hoka-zinal-2.jpg" alt="Hoka Zinal 2"><h3>Zinal 2</h3><p>Marca: Hoka</p><p>Precio: 150,00 €</p></div>
-      <div class="product-card"><img src="hoka-crescendo-md.jpg" alt="Hoka Crescendo MD"><h3>Crescendo MD</h3><p>Marca: Hoka</p><p>Precio: 100,00 €</p></div>
-      <div class="product-card"><img src="hoka-cielo-x1.jpg" alt="Hoka Cielo X1"><h3>Cielo X1</h3><p>Marca: Hoka</p><p>Precio: 275,00 €</p></div>
-    </div>
-  </div>
-  <!-- SAUCONY -->
-  <div class="brand-section">
-    <h3 class="brand-title">Saucony</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="saucony-endorphin-pro-4.jpg" alt="Saucony Endorphin Pro 4"><h3>Endorphin Pro 4</h3><p>Marca: Saucony</p><p>Precio: 199,99 €</p></div>
-      <div class="product-card"><img src="saucony-ride-18.jpg" alt="Saucony Ride 18"><h3>Ride 18</h3><p>Marca: Saucony</p><p>Precio: 150,00 €</p></div>
-      <div class="product-card"><img src="saucony-peregrine-15-gtx.jpg" alt="Saucony Peregrine 15 GTX"><h3>Peregrine 15 GTX</h3><p>Marca: Saucony</p><p>Precio: 160,00 €</p></div>
-      <div class="product-card"><img src="saucony-ride-tr2.jpg" alt="Saucony Ride TR2"><h3>Ride TR2</h3><p>Marca: Saucony</p><p>Precio: 135,00 €</p></div>
-      <div class="product-card"><img src="saucony-hurricane-24.jpg" alt="Saucony Hurricane 24"><h3>Hurricane 24</h3><p>Marca: Saucony</p><p>Precio: 180,00 €</p></div>
-      <div class="product-card"><img src="saucony-triumph-23.jpg" alt="Saucony Triumph 23"><h3>Triumph 23</h3><p>Marca: Saucony</p><p>Precio: 180,00 €</p></div>
-      <div class="product-card"><img src="saucony-xodus-ultra-4.jpg" alt="Saucony Xodus Ultra 4"><h3>Xodus Ultra 4</h3><p>Marca: Saucony</p><p>Precio: 170,00 €</p></div>
-      <div class="product-card"><img src="saucony-guide-18.jpg" alt="Saucony Guide 18"><h3>Guide 18</h3><p>Marca: Saucony</p><p>Precio: 160,00 €</p></div>
-    </div>
+      <div class="catalog" id="catalog">
+
+<!-- NIKE -->
+<div class="brand-section">
+  <h3 class="brand-title">Nike</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="nike-air-force-1.jpg" alt="Nike Air Force 1"><h3>Air Force 1</h3><p>Precio: 119,99 €</p></div>
+    <div class="product-card"><img src="nike-air-max-1.jpg" alt="Nike Air Max 1"><h3>Air Max 1</h3><p>Precio: 139,99 €</p></div>
+    <div class="product-card"><img src="nike-vomero-5.jpg" alt="Nike Vomero 5"><h3>Vomero 5</h3><p>Precio: 159,99 €</p></div>
+    <div class="product-card"><img src="nike-dunk-low.jpg" alt="Nike Dunk Low"><h3>Dunk Low</h3><p>Precio: 119,99 €</p></div>
+    <div class="product-card"><img src="nike-air-force-shadow.jpg" alt="Nike Air Force Shadow"><h3>Air Force Shadow</h3><p>Precio: 125,00 €</p></div>
+    <div class="product-card"><img src="nike-juniper-trail-2.jpg" alt="Nike Juniper Trail 2"><h3>Juniper Trail 2</h3><p>Precio: 99,99 €</p></div>
+    <div class="product-card"><img src="nike-initiator.jpg" alt="Nike Initiator"><h3>Initiator</h3><p>Precio: 64,99 €</p></div>
+    <div class="product-card"><img src="nike-pegasus.jpg" alt="Nike Pegasus"><h3>Pegasus</h3><p>Precio: 129,99 €</p></div>
   </div>
 </div>
-  </div>
-  <div class="brand-section">
-    <h3 class="brand-title">Adidas</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="adidas-campus-00s.jpg" alt="Adidas Campus 00s"><h3>Campus 00s</h3><p>Marca: Adidas</p><p>Precio: 109,95 €</p></div>
-      <div class="product-card"><img src="adidas-forum.jpg" alt="Adidas Forum"><h3>Forum</h3><p>Marca: Adidas</p><p>Precio: 109,99 €</p></div>
-      <div class="product-card"><img src="adidas-samba.jpg" alt="Adidas Samba"><h3>Samba</h3><p>Marca: Adidas</p><p>Precio: 99,99 €</p></div>
-      <div class="product-card"><img src="adidas-ozweego.jpg" alt="Adidas Ozweego"><h3>Ozweego</h3><p>Marca: Adidas</p><p>Precio: 119,95 €</p></div>
-      <div class="product-card"><img src="adidas-swift-run-22.jpg" alt="Adidas Swift Run 22"><h3>Swift Run 22</h3><p>Marca: Adidas</p><p>Precio: 84,95 €</p></div>
-      <div class="product-card"><img src="adidas-sleek-super.jpg" alt="Adidas Sleek Super"><h3>Sleek Super</h3><p>Marca: Adidas</p><p>Precio: 89,99 €</p></div>
-      <div class="product-card"><img src="adidas-zx-2k-boost.jpg" alt="Adidas ZX 2K Boost"><h3>ZX 2K Boost</h3><p>Marca: Adidas</p><p>Precio: 139,95 €</p></div>
-      <div class="product-card"><img src="adidas-response-cl.jpg" alt="Adidas Response CL"><h3>Response CL</h3><p>Marca: Adidas</p><p>Precio: 119,99 €</p></div>
-    </div>
-  </div>
-  <div class="brand-section">
-    <h3 class="brand-title">New Balance</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="newbalance-2002r.jpg" alt="New Balance 2002 R"><h3>2002 R</h3><p>Marca: New Balance</p><p>Precio: 149,99 €</p></div>
-      <div class="product-card"><img src="newbalance-740.jpg" alt="New Balance 740"><h3>740</h3><p>Marca: New Balance</p><p>Precio: 109,99 €</p></div>
-      <div class="product-card"><img src="newbalance-530.jpg" alt="New Balance 530"><h3>530</h3><p>Marca: New Balance</p><p>Precio: 109,95 €</p></div>
-      <div class="product-card"><img src="newbalance-550.jpg" alt="New Balance 550"><h3>550</h3><p>Marca: New Balance</p><p>Precio: 129,95 €</p></div>
-      <div class="product-card"><img src="newbalance-990.jpg" alt="New Balance 990"><h3>990</h3><p>Marca: New Balance</p><p>Precio: 209,99 €</p></div>
-      <div class="product-card"><img src="newbalance-993.jpg" alt="New Balance 993"><h3>993</h3><p>Marca: New Balance</p><p>Precio: 199,99 €</p></div>
-      <div class="product-card"><img src="newbalance-1906.jpg" alt="New Balance 1906"><h3>1906</h3><p>Marca: New Balance</p><p>Precio: 150,00 €</p></div>
-      <div class="product-card"><img src="newbalance-9060.jpg" alt="New Balance 9060"><h3>9060</h3><p>Marca: New Balance</p><p>Precio: 159,95 €</p></div>
-    </div>
-  </div>
-  <div class="brand-section">
-    <h3 class="brand-title">Converse</h3>
-    <div class="brand-grid">
-      <div class="product-card"><img src="converse-ctas-platform.jpg" alt="Converse CTAS Platform"><h3>CTAS Platform</h3><p>Marca: Converse</p><p>Precio: 85,00 €</p></div>
-      <div class="product-card"><img src="converse-ctas-move.jpg" alt="Converse CTAS Move"><h3>CTAS Move</h3><p>Marca: Converse</p><p>Precio: 89,99 €</p></div>
-      <div class="product-card"><img src="converse-ctas-dainty-lucky.jpg" alt="Converse CTAS Dainty Lucky"><h3>CTAS Dainty Lucky</h3><p>Marca: Converse</p><p>Precio: 75,00 €</p></div>
-      <div class="product-card"><img src="converse-cruise.jpg" alt="Converse Cruise"><h3>Cruise</h3><p>Marca: Converse</p><p>Precio: 95,00 €</p></div>
-      <div class="product-card"><img src="converse-run-star-trainer.jpg" alt="Converse Run Star Trainer"><h3>Run Star Trainer</h3><p>Marca: Converse</p><p>Precio: 110,00 €</p></div>
-      <div class="product-card"><img src="converse-run-star-hike.jpg" alt="Converse Run Star Hike"><h3>Run Star Hike</h3><p>Marca: Converse</p><p>Precio: 115,00 €</p></div>
-      <div class="product-card"><img src="converse-star-player-76-suede.jpg" alt="Converse Star Player 76 Suede"><h3>Star Player 76 Suede</h3><p>Marca: Converse</p><p>Precio: 85,00 €</p></div>
-      <div class="product-card"><img src="converse-omni-trainer.jpg" alt="Converse Omni Trainer"><h3>Omni Trainer</h3><p>Marca: Converse</p><p>Precio: 99,95 €</p></div>
-    </div>
+
+<!-- ADIDAS -->
+<div class="brand-section">
+  <h3 class="brand-title">Adidas</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="adidas-campus-00s.jpg" alt="Adidas Campus 00s"><h3>Campus 00s</h3><p>Precio: 109,95 €</p></div>
+    <div class="product-card"><img src="adidas-forum.jpg" alt="Adidas Forum"><h3>Forum</h3><p>Precio: 109,99 €</p></div>
+    <div class="product-card"><img src="adidas-samba.jpg" alt="Adidas Samba"><h3>Samba</h3><p>Precio: 99,99 €</p></div>
+    <div class="product-card"><img src="adidas-ozweego.jpg" alt="Adidas Ozweego"><h3>Ozweego</h3><p>Precio: 119,95 €</p></div>
+    <div class="product-card"><img src="adidas-swift-run-22.jpg" alt="Adidas Swift Run 22"><h3>Swift Run 22</h3><p>Precio: 84,95 €</p></div>
+    <div class="product-card"><img src="adidas-sleek-super.jpg" alt="Adidas Sleek Super"><h3>Sleek Super</h3><p>Precio: 89,99 €</p></div>
+    <div class="product-card"><img src="adidas-zx-2k-boost.jpg" alt="Adidas ZX 2K Boost"><h3>ZX 2K Boost</h3><p>Precio: 139,95 €</p></div>
+    <div class="product-card"><img src="adidas-response-cl.jpg" alt="Adidas Response CL"><h3>Response CL</h3><p>Precio: 119,99 €</p></div>
   </div>
 </div>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h3 class="brand-title">Marca</h3>
-<div class="catalog" style="display: none;">
-    <img src="converse-run-star-hike.jpg" alt="Converse Run Star Hike">
-    <h3>Run Star Hike</h3>
-    <p>Marca: Converse</p>
-    <p>Precio: 115,00 €</p>
+<!-- NEW BALANCE -->
+<div class="brand-section">
+  <h3 class="brand-title">New Balance</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="newbalance-2002r.jpg" alt="New Balance 2002 R"><h3>2002 R</h3><p>Precio: 149,99 €</p></div>
+    <div class="product-card"><img src="newbalance-740.jpg" alt="New Balance 740"><h3>740</h3><p>Precio: 109,99 €</p></div>
+    <div class="product-card"><img src="newbalance-530.jpg" alt="New Balance 530"><h3>530</h3><p>Precio: 109,95 €</p></div>
+    <div class="product-card"><img src="newbalance-550.jpg" alt="New Balance 550"><h3>550</h3><p>Precio: 129,95 €</p></div>
+    <div class="product-card"><img src="newbalance-990.jpg" alt="New Balance 990"><h3>990</h3><p>Precio: 209,99 €</p></div>
+    <div class="product-card"><img src="newbalance-993.jpg" alt="New Balance 993"><h3>993</h3><p>Precio: 199,99 €</p></div>
+    <div class="product-card"><img src="newbalance-1906.jpg" alt="New Balance 1906"><h3>1906</h3><p>Precio: 150,00 €</p></div>
+    <div class="product-card"><img src="newbalance-9060.jpg" alt="New Balance 9060"><h3>9060</h3><p>Precio: 159,95 €</p></div>
   </div>
 </div>
-      <section id="reviews-section">
-        <h2>RESEÑAS</h2>
-        <div class="reviews-list" id="reviews-list">
-          <div class="review-card">"Muy cómodas y con estilo inconfundible."</div>
-          <div class="review-card">"Excelente atención y variedad de marcas top. ¡Muy recomendable!"</div>
-          <div class="review-card">"La calidad es insuperable y los lanzamientos exclusivos me fascinan."</div>
-          <div class="review-card">"Perfecto para los amantes de las sneakers y el estilo urbano."</div>
-        </div>
-        <div id="add-review">
-          <textarea id="reviewInput" placeholder="Añade tu reseña aquí..."></textarea>
-          <button id="submitReview">Enviar reseña</button>
-        </div>
-      </section>
-      <section id="contact-section">
-        <h2>Información de CONTACTO</h2>
-        <div class="contact-item"><span>📍</span>C Rambla de la Mancha, 25<br>Almansa, Albacete</div>
-        <div class="contact-item"><span>✉️</span>urban.district@sneaker.com</div>
-        <div class="contact-item"><span>📞</span>+34 661 375 627</div>
-      </section>
+
+<!-- CONVERSE -->
+<div class="brand-section">
+  <h3 class="brand-title">Converse</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="converse-ctas-platform.jpg" alt="Converse CTAS Platform"><h3>CTAS Platform</h3><p>Precio: 85,00 €</p></div>
+    <div class="product-card"><img src="converse-ctas-move.jpg" alt="Converse CTAS Move"><h3>CTAS Move</h3><p>Precio: 89,99 €</p></div>
+    <div class="product-card"><img src="converse-ctas-dainty-lucky.jpg" alt="Converse CTAS Dainty Lucky"><h3>CTAS Dainty Lucky</h3><p>Precio: 75,00 €</p></div>
+    <div class="product-card"><img src="converse-cruise.jpg" alt="Converse Cruise"><h3>Cruise</h3><p>Precio: 95,00 €</p></div>
+    <div class="product-card"><img src="converse-run-star-trainer.jpg" alt="Converse Run Star Trainer"><h3>Run Star Trainer</h3><p>Precio: 110,00 €</p></div>
+    <div class="product-card"><img src="converse-run-star-hike.jpg" alt="Converse Run Star Hike"><h3>Run Star Hike</h3><p>Precio: 115,00 €</p></div>
+    <div class="product-card"><img src="converse-star-player-76-suede.jpg" alt="Converse Star Player 76 Suede"><h3>Star Player 76 Suede</h3><p>Precio: 85,00 €</p></div>
+    <div class="product-card"><img src="converse-omni-trainer.jpg" alt="Converse Omni Trainer"><h3>Omni Trainer</h3><p>Precio: 99,95 €</p></div>
+  </div>
+</div>
+
+<!-- ASICS -->
+<div class="brand-section">
+  <h3 class="brand-title">Asics</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="asics-gel-nyc.jpg" alt="Asics Gel NYC"><h3>Gel NYC</h3><p>Precio: 179,95 €</p></div>
+    <div class="product-card"><img src="asics-gel-kayano.jpg" alt="Asics Gel Kayano"><h3>Gel Kayano</h3><p>Precio: 179,95 €</p></div>
+    <div class="product-card"><img src="asics-gel-nimbus-27.jpg" alt="Asics Gel Nimbus 27"><h3>Gel Nimbus 27</h3><p>Precio: 190,00 €</p></div>
+    <div class="product-card"><img src="asics-gel-cumulus.jpg" alt="Asics Gel Cumulus"><h3>Gel Cumulus</h3><p>Precio: 140,00 €</p></div>
+    <div class="product-card"><img src="asics-gel-dedicate-8-padel.jpg" alt="Asics Gel Dedicate 8 Padel"><h3>Gel Dedicate 8 Padel</h3><p>Precio: 75,00 €</p></div>
+    <div class="product-card"><img src="asics-noosa-tri-16.jpg" alt="Asics Noosa Tri 16"><h3>Noosa Tri 16</h3><p>Precio: 140,00 €</p></div>
+    <div class="product-card"><img src="asics-gel-resolution-x-padel.jpg" alt="Asics Gel Resolution X Padel"><h3>Gel Resolution X Padel</h3><p>Precio: 160,00 €</p></div>
+    <div class="product-card"><img src="asics-patriot-13-gs.jpg" alt="Asics Patriot 13 GS"><h3>Patriot 13 GS</h3><p>Precio: 50,00 €</p></div>
+  </div>
+</div>
+
+<!-- MIZUNO -->
+<div class="brand-section">
+  <h3 class="brand-title">Mizuno</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="mizuno-wave-rider-28.jpg" alt="Mizuno Wave Rider 28"><h3>Wave Rider 28</h3><p>Precio: 160,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-sky-8.jpg" alt="Mizuno Wave Sky 8"><h3>Wave Sky 8</h3><p>Precio: 180,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-momentum-3.jpg" alt="Mizuno Wave Momentum 3"><h3>Wave Momentum 3</h3><p>Precio: 150,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-mirage-5.jpg" alt="Mizuno Wave Mirage 5"><h3>Wave Mirage 5</h3><p>Precio: 140,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-lightning-neo-2.jpg" alt="Mizuno Wave Lightning Neo 2"><h3>Wave Lightning Neo 2</h3><p>Precio: 170,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-inspire-21.jpg" alt="Mizuno Wave Inspire 21"><h3>Wave Inspire 21</h3><p>Precio: 155,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-exceed-tour-6-cc.jpg" alt="Mizuno Wave Exceed Tour 6 CC"><h3>Wave Exceed Tour 6 CC</h3><p>Precio: 160,00 €</p></div>
+    <div class="product-card"><img src="mizuno-wave-lightning-z8.jpg" alt="Mizuno Wave Lightning Z8"><h3>Wave Lightning Z8</h3><p>Precio: 130,00 €</p></div>
+  </div>
+</div>
+
+<!-- HOKA -->
+<div class="brand-section">
+  <h3 class="brand-title">Hoka One One</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="hoka-clifton-9.jpg" alt="Hoka Clifton 9"><h3>Clifton 9</h3><p>Precio: 150,00 €</p></div>
+    <div class="product-card"><img src="hoka-clifton-ls.jpg" alt="Hoka Clifton LS"><h3>Clifton LS</h3><p>Precio: 155,00 €</p></div>
+    <div class="product-card"><img src="hoka-speedgoat-5.jpg" alt="Hoka Speedgoat 5"><h3>Speedgoat 5</h3><p>Precio: 130,00 €</p></div>
+    <div class="product-card"><img src="hoka-bondi-8.jpg" alt="Hoka Bondi 8"><h3>Bondi 8</h3><p>Precio: 160,00 €</p></div>
+    <div class="product-card"><img src="hoka-kaha-2-low-goretex.jpg" alt="Hoka Kaha 2 Low Gore-Tex"><h3>Kaha 2 Low Gore-Tex</h3><p>Precio: 210,00 €</p></div>
+    <div class="product-card"><img src="hoka-zinal-2.jpg" alt="Hoka Zinal 2"><h3>Zinal 2</h3><p>Precio: 150,00 €</p></div>
+    <div class="product-card"><img src="hoka-crescendo-md.jpg" alt="Hoka Crescendo MD"><h3>Crescendo MD</h3><p>Precio: 100,00 €</p></div>
+    <div class="product-card"><img src="hoka-cielo-x1.jpg" alt="Hoka Cielo X1"><h3>Cielo X1</h3><p>Precio: 275,00 €</p></div>
+  </div>
+</div>
+
+<!-- SAUCONY -->
+<div class="brand-section">
+  <h3 class="brand-title">Saucony</h3>
+  <div class="brand-grid">
+    <div class="product-card"><img src="saucony-endorphin-pro-4.jpg" alt="Saucony Endorphin Pro 4"><h3>Endorphin Pro 4</h3><p>Precio: 199,99 €</p></div>
+    <div class="product-card"><img src="saucony-ride-18.jpg" alt="Saucony Ride 18"><h3>Ride 18</h3><p>Precio: 150,00 €</p></div>
+    <div class="product-card"><img src="saucony-peregrine-15-gtx.jpg" alt="Saucony Peregrine 15 GTX"><h3>Peregrine 15 GTX</h3><p>Precio: 160,00 €</p></div>
+    <div class="product-card"><img src="saucony-ride-tr2.jpg" alt="Saucony Ride TR2"><h3>Ride TR2</h3><p>Precio: 135,00 €</p></div>
+    <div class="product-card"><img src="saucony-hurricane-24.jpg" alt="Saucony Hurricane 24"><h3>Hurricane 24</h3><p>Precio: 180,00 €</p></div>
+    <div class="product-card"><img src="saucony-triumph-23.jpg" alt="Saucony Triumph 23"><h3>Triumph 23</h3><p>Precio: 180,00 €</p></div>
+    <div class="product-card"><img src="saucony-xodus-ultra-4.jpg" alt="Saucony Xodus Ultra 4"><h3>Xodus Ultra 4</h3><p>Precio: 170,00 €</p></div>
+    <div class="product-card"><img src="saucony-guide-18.jpg" alt="Saucony Guide 18"><h3>Guide 18</h3><p>Precio: 160,00 €</p></div>
+  </div>
+</div>
+        <!-- Aquí se incluirán las marcas y productos, organizados por bloques -->
+      </div>
     </main>
   </div>
-  <footer>
-    Natalie Insausti Oliva - 2025
-  </footer>
   <script>
     const btnToggle = document.getElementById('toggleCatalog');
     const catalog = document.getElementById('catalog');
     btnToggle.addEventListener('click', () => {
-      if (catalog.classList.contains('active')) {
-  catalog.classList.remove('active');
-  catalog.style.display = 'none';
-  btnToggle.textContent = 'Explorar catálogo';
-} else {
-  catalog.classList.add('active');
-  catalog.style.display = 'grid';
-  btnToggle.textContent = 'Cerrar catálogo';
-}
-    });
-
-    const submitReviewBtn = document.getElementById('submitReview');
-    const reviewInput = document.getElementById('reviewInput');
-    const reviewsList = document.getElementById('reviews-list');
-    submitReviewBtn.addEventListener('click', () => {
-      const text = reviewInput.value.trim();
-      if(text.length > 0) {
-        const newReview = document.createElement('div');
-        newReview.className = 'review-card';
-        newReview.textContent = `"${text}"`;
-        reviewsList.appendChild(newReview);
-        reviewInput.value = '';
+      if (catalog.style.display === 'flex') {
+        catalog.style.display = 'none';
+        btnToggle.textContent = 'Explorar catálogo';
       } else {
-        alert('Por favor, escribe una reseña antes de enviarla.');
+        catalog.style.display = 'flex';
+        btnToggle.textContent = 'Cerrar catálogo';
       }
     });
   </script>
