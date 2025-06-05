@@ -16,20 +16,16 @@
       min-height: 100vh;
     }
     header {
-      background-color: #ff69b4;
-      background-image: url('logo-header.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: #fff0f5;
-      padding: 4rem 2rem;
-      text-align: center;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+  background-color: #ff69b4;
+  color: #fff0f5;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
     header h1 {
       margin: 0;
       background-color: rgba(0, 0, 0, 0.4);
@@ -92,16 +88,16 @@
       max-width: 250px;
     }
     .catalog {
-      display: none;
-      margin-bottom: 2rem;
-      border: 2px solid #ff1493;
-      padding: 1rem;
-      min-height: 150px;
-      border-radius: 8px;
-      color: #4a0033;
-      font-style: italic;
-      text-align: center;
-    }
+  display: none;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffe4f1;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  color: #4a0033;
+  font-style: normal;
+}
     #reviews-section {
       margin-top: 2rem;
     }
@@ -215,6 +211,10 @@
     <p>Pisa fuerte, marca tendencia</p>
   </header>
   <div class="container">
+  <!-- Logo visual en grande -->
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <img src="logo-header.png" alt="Urban District Logo" style="max-width: 300px; width: 100%; height: auto;" />
+  </div>
     <div class="image-section">
       <img src="/mnt/data/Captura de pantalla 2025-05-16 121925.png" alt="Urban District diseño" />
     </div>
@@ -448,5 +448,4 @@
   </script>
 </body>
 </html>
-
 
